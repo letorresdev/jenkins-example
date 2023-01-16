@@ -16,6 +16,7 @@ pipeline {
     }
     stage('terraform') {
       steps {
+	sh 'chmod +x -R ./terraformw.sh'
         sh './terraformw.sh apply -auto-approve -no-color'
       }
     }
